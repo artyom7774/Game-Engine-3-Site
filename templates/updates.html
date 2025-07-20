@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Engine 3</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/logo/dark.png') }}" type="image/x-icon">
+</head>
+<body class="body">
+    <header class="header_without_image">
+        <div class="header__main_without_image">
+            <div class="header__menu">
+    <div class="header__menu__grid">
+        <a class="header__menu__grid__name" href="/">
+            <img class="header__menu__grid__name__logo" src="{{ url_for('static', filename='images/logo/white.png') }}">
+            <p class="header__menu__grid__name__name">
+                Game Engine 3
+            </p>
+        </a>
+        <a class="header__menu__grid__element" href="/download/">
+            Download
+        </a>
+        <a class="header__menu__grid__element" href="/community/">
+            Community
+        </a>
+        <a class="header__menu__grid__element" href="/documentation/">
+            Documentation
+        </a>
+        <a class="header__menu__grid__element" href="/updates/">
+            Updates
+        </a>
+    </div>
+</div>
+
+        </div>
+    </header>
+    <main>
+        <div class="main__updates">
+            <div class='main__updates__element'><p class='main__updates__element__title'>Game Engine 3.12.2</p><div class='main__updates__element__list'>- fixbug with node if element in list</div></div><div class='main__updates__element'><p class='main__updates__element__title'>Game Engine 3.12.1</p><div class='main__updates__element__list'>- added new engine translations
+<br>- add icon for engine</div></div><div class='main__updates__element'><p class='main__updates__element__title'>Game Engine 3.12.0</p><div class='main__updates__element__list'>- objects have new parameter: alpha
+<br>- auto update project for new version Game Engine 3 (working from 3.11.0)</div></div><div class='main__updates__element'><p class='main__updates__element__title'>Game Engine 3.11.0</p><div class='main__updates__element__list'>- new method for run project
+<br>- basic group nodes for code</div></div><div class='main__updates__element'><p class='main__updates__element__title'>Game Engine 3.10.0</p><div class='main__updates__element__list'>- fixed bug with get and set var for created object
+<br>- update text translate
+<br>- new nodes: get noise value, wait, on load scene, break loop, if key in dict, if element in list, get all object in group
+<br>- new nodes for math operations: absolute of number, sin, cos, tan, ctg, degrees, radians
+<br>- new nodes for music: play music, stop music, play sound
+<br>- new functions for python node: getNoiseValue, sin, cos, tan, ctg, degrees, radians, playMusic, stopMusic, playSound
+<br>- update error messages
+<br>- fixed bug in set numbers in code
+<br>- fixed bug with flip animation update
+<br>- optimize engine for objects with big hitbox
+<br>- fixed bug with more one functions in project when is not job press event node</div></div><div class='main__updates__element'><p class='main__updates__element__title'>Game Engine 3.9.0</p><div class='main__updates__element__list'>- new objects: text, field, button, particle, kinematic object
+<br>- update node: set object parameter, get object parameter, move object with braking, on button press
+<br>- new functions for python node: setObjectParameter, getObjectParameter, moveObjectWithBraking, getTimePassed
+<br>- fixed bug with run project
+<br>- run project have menu with all globals variables
+<br>- update checking for new version
+<br>- increase font for nodes
+<br>- open notepad when there is an error
+<br>- remove jump power and speed parameters for dynamic object
+<br>- update run menu
+<br>- update install python menu</div></div><div class='main__updates__element'><p class='main__updates__element__title'>Game Engine 3.8.1</p><div class='main__updates__element__list'>- update physic
+<br>- new nodes: get object parameter, set object parameter, get time passed
+<br>- new parameter for node jump: power</div></div><div class='main__updates__element'><p class='main__updates__element__title'>Game Engine 3.8.0</p><div class='main__updates__element__list'>- new object physic
+<br>- add mass for object</div></div><div class='main__updates__element'><p class='main__updates__element__title'>Game Engine 3.7.3</p><div class='main__updates__element__list'>- new nodes: get mouse pos
+<br>- new functions for python node: run animation, stop animation, mirror animation, get resulting vector, get mouse pos
+<br>- fixbug with compiling project</div></div><div class='main__updates__element'><p class='main__updates__element__title'>Game Engine 3.7.2</p><div class='main__updates__element__list'>- optimize engine</div></div><div class='main__updates__element'><p class='main__updates__element__title'>Game Engine 3.7.1</p><div class='main__updates__element__list'>- fixed bug with animation
+<br>- new node: get resulting vector</div></div><div class='main__updates__element'><p class='main__updates__element__title'>Game Engine 3.7.0</p><div class='main__updates__element__list'>- animations
+<br>- node for animations: run animation, stop animation, mirror animation</div></div><div class='main__updates__element'><p class='main__updates__element__title'>Game Engine 3.6.0</p><div class='main__updates__element__list'>- mode for full screen in settings
+<br>- param for invisible object (working in run project)
+<br>- optimized engine
+<br>- changed object physics</div></div><div class='main__updates__element'><p class='main__updates__element__title'>Game Engine 3.5.1</p><div class='main__updates__element__list'>- node for run function and initializate function</div></div><div class='main__updates__element'><p class='main__updates__element__title'>Game Engine 3.5.0</p><div class='main__updates__element__list'>- new node for write code on python
+<br>- using more than one functions in project
+<br>- debugger for run project
+<br>- optimized engine (by 2 times)</div></div><div class='main__updates__element'><p class='main__updates__element__title'>Game Engine 3.4.2</p><div class='main__updates__element__list'>- update help menu
+<br>- fixed bug with write text on console
+<br>- delete help menu
+<br>- new variable types: dict, list
+<br>- add nodes for using lists and dicts
+<br>- another nodes
+<br>- light theme</div></div><div class='main__updates__element'><p class='main__updates__element__title'>Game Engine 3.4.1</p><div class='main__updates__element__list'>- new color for type "Any" in code
+<br>- optimize code
+<br>- optimize scene
+<br>- fixbug with move object</div></div><div class='main__updates__element'><p class='main__updates__element__title'>Game Engine 3.4.0</p><div class='main__updates__element__list'>- add node dislay text, if collision, create object, random, remove object, for object in group, connect text</div></div><div class='main__updates__element'><p class='main__updates__element__title'>Game Engine 3.3.0</p><div class='main__updates__element__list'>- fixed bug with save files
+<br>- fixed bug with save code files
+<br>- fixed bug with using more funcions files in project
+<br>- update code editor
+<br>- every object have you'r variables
+<br>- node for save and get object variables</div></div><div class='main__updates__element'><p class='main__updates__element__title'>Game Engine 3.2.0</p><div class='main__updates__element__list'>- update site and help menu
+<br>- update vector move in dynamic object
+<br>- nodes for mouse and keyboard click and press
+<br>- update node every frame
+<br>- add node every tick
+<br>- can't set input in event nodes
+<br>- fixed console in run project
+<br>- update logger</div></div><div class='main__updates__element'><p class='main__updates__element__title'>Game Engine 3.1.0</p><div class='main__updates__element__list'>- fixed bug with visiable versions
+<br>- optimize engine
+<br>- project site with help menu: https://artyom7777.pythonanywhere.com/
+<br>- fixed bug with save (executable) project
+<br>- create collision editor</div></div><div class='main__updates__element'><p class='main__updates__element__title'>Game Engine 3.0.3</p><div class='main__updates__element__list'>- optimize code editor
+<br>- fixed bugs in code editor
+<br>- fixed bug with object collision</div></div><div class='main__updates__element'><p class='main__updates__element__title'>Game Engine 3.0.2</p><div class='main__updates__element__list'>- update help menu</div></div><div class='main__updates__element'><p class='main__updates__element__title'>Game Engine 3.0.1</p><div class='main__updates__element__list'>- update moving object by angle
+<br>- message about a program update, if one exists
+<br>- update help menu</div></div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer__menu">
+    <div class="footer__menu__submenu">
+        <p class="footer__menu__submenu__title">
+            Game Engine 3
+        </p>
+        <div class="footer__menu__submenu__element">
+            <a class="footer__menu__submenu__element__text" href="/download/">
+                Download
+            </a>
+            <a class="footer__menu__submenu__element__text" href="/documentation/">
+                Documentation
+            </a>
+        </div>
+    </div>
+    <div class="footer__menu__submenu">
+        <p class="footer__menu__submenu__title">
+            Community
+        </p>
+        <div class="footer__menu__submenu__element">
+            <a class="footer__menu__submenu__element__text" href="https://discord.gg/FxY6Kfgx57">
+                Discord
+            </a>
+            <a class="footer__menu__submenu__element__text" href="https://github.com/artyom7774">
+                GitHub
+            </a>
+        </div>
+    </div>
+    <div class="footer__menu__submenu">
+        <p class="footer__menu__submenu__title">
+            Language
+        </p>
+        <div class="footer__menu__submenu__element__grid">
+            <button class="footer__menu__submenu__element__text" onclick="changeLanguage('en')">
+                English
+            </button>
+            <button class="footer__menu__submenu__element__text" onclick="changeLanguage('ru')">
+                Русский
+            </button>
+            <button class="footer__menu__submenu__element__text" onclick="changeLanguage('kz')">
+                Қазақша
+            </button>
+            <button class="footer__menu__submenu__element__text" onclick="changeLanguage('ar')">
+                العربية
+            </button>
+            <button class="footer__menu__submenu__element__text" onclick="changeLanguage('fr')">
+                Français
+            </button>
+            <button class="footer__menu__submenu__element__text" onclick="changeLanguage('es')">
+                Español
+            </button>
+            <button class="footer__menu__submenu__element__text" onclick="changeLanguage('zh')">
+                中文
+            </button>
+            <button class="footer__menu__submenu__element__text" onclick="changeLanguage('hi')">
+                हिन्दी
+            </button>
+            <button class="footer__menu__submenu__element__text" onclick="changeLanguage('pt')">
+                Português
+            </button>
+            <button class="footer__menu__submenu__element__text" onclick="changeLanguage('ja')">
+                日本語
+            </button>
+        </div>
+    </div>
+</div>
+<div class="footer__copyright">
+    <hr>
+    <p class="footer__copyright__text">
+        Game Engine 3 ©2024-2025
+    </p>
+</div>
+
+    </footer>
+    <script src="{{ url_for('static', filename='js/code.js') }}"></script>
+    <script data-goatcounter="https://artyom7777.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

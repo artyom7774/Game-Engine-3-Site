@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Engine 3</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/logo/dark.png') }}" type="image/x-icon">
+</head>
+<body class="body">
+    <header class="header_without_image">
+        <div class="header__main_without_image">
+            $HEADER$
+        </div>
+    </header>
+    <main>
+        <div class="main__documentation__list">
+            <a class="main__documentation__list__element" href="/documentation/nodes">
+                <p class="main__documentation__list__title">
+                    &Nodes&
+                </p>
+                <div class="main__documentation__list__list">
+                    &List of all nodes, documentation on their use&
+                </div>
+            </a>
+            <a class="main__documentation__list__element" href="/documentation/first-program">
+                <p class="main__documentation__list__title">
+                    &First program&
+                </p>
+                <div class="main__documentation__list__list">
+                    &Documentation for creating the first program&
+                </div>
+            </a>
+        </div>
+    </main>
+    <footer>
+        $FOOTER$
+    </footer>
+    <script src="{{ url_for('static', filename='js/code.js') }}"></script>
+    <script data-goatcounter="https://artyom7777.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

@@ -1,134 +1,131 @@
 from flask import Flask, render_template, request, jsonify, render_template_string, send_from_directory
 
 import requests
-import json
+import hjson
+import os
 
 app = Flask(__name__)
 
-content = ""
-
+variables = {}
 language = "en"
-menu = "Game Engine 3"
 
-menues = {
-    "Game Engine 3": {
-
-    },
-
-    "Download": {
-
-    },
-
-    "Control": {
-
-    },
-
-    "Nodes": {
-
-    },
-
-    "Guides": {
-
-    },
-
-    "Programming": {
-
-    }
-}
-
-translates = {
-    "en": json.load(open("bundles/en.json", encoding="utf-8")),
-    "ru": json.load(open("bundles/ru.json", encoding="utf-8"))
-}
+now = "index.html"
 
 
-def decodeText(var):
-    text = ""
+def initialization():
+    # DOWNLOAD VARIABLES
 
-    for line in var:
-        if line == "-" * 100:
-            line = "<br>"
+    url = "https://raw.githubusercontent.com/artyom7774/Game-Engine-3/main/scr/files/version.json"
 
-        if line == "":
-            line = "<br>"
-
-        if line[0] == "<" and line[-1] == ">":
-            text += line
-
-        else:
-            text += f"<p class='content__main__discription'>{line}</p>"
-
-    return handleText(text)
-
-
-def handleText(text):
     try:
-        response = requests.get("https://raw.githubusercontent.com/artyom7774/Game-Engine-3/main/scr/files/version.json")
+        response = requests.get(url)
         data = response.json()
-        version = data.get("version", "unknown")
 
-    except Exception as e:
-        print(f"ERROR: {e}")
+        variables["GE3Version"] = data["version"]
 
-        return text
+    except Exception:
+        variables["GE3Version"] = "3.12.1"
 
-    while text.find("%version%") != -1:
-        text = text.replace("%version%", version)
+    url = "https://raw.githubusercontent.com/artyom7774/GELauncher/main/scr/files/version.json"
 
-    return text
+    try:
+        response = requests.get(url)
+        data = response.json()
+
+        variables["GELauncherVersion"] = data["version"]
+
+    except Exception:
+        variables["GELauncherVersion"] = "1.0.0"
+
+    url = "https://raw.githubusercontent.com/artyom7774/Game-Engine-3/main/scr/files/updates.json"
+
+    try:
+        response = requests.get(url)
+        data = response.json()
+
+        variables["updates"] = data
+
+    except Exception:
+        variables["updates"] = None
+
+    with open("base/scr/header.html", "r", encoding="utf-8") as file:
+        variables["HEADER"] = file.read()
+
+    with open("base/scr/footer.html", "r", encoding="utf-8") as file:
+        variables["FOOTER"] = file.read()
+
+    # CREATE UPDATES MENU
+
+    updates = ""
+
+    for update in variables["updates"]["sorted"][::-1]:
+        updates += "<div class='main__updates__element'>"
+
+        version = variables['updates']['updates'][update]
+
+        updates += f"<p class='main__updates__element__title'>Game Engine {version['name']}</p>"
+
+        updates += "<div class='main__updates__element__list'>"
+
+        text = version["text"]
+
+        out = ""
+
+        flag = False
+
+        for symbol in text:
+            if symbol == "-":
+                if flag:
+                    out += "<br>-"
+
+                else:
+                    flag = True
+
+                    out += "-"
+
+            else:
+                out += symbol
+
+        updates += out
+
+        updates += "</div>"
+
+        updates += "</div>"
+
+    variables["UPDATES"] = updates
+
+    print(variables)
+
+    init()
 
 
-def createContent():
-    global content, language, menu
+def init():
+    # CREATE TEMPLATES FILES & TRANSLATING
 
-    out = "<div class='content__menu__choose'>"
+    for root, dirs, files in os.walk("base"):
+        for pathfile in files:
+            path = f"{root}/{pathfile}"
 
-    for key in menues.keys():
-        out += f"<button class='content__menu__button' onclick='clickHandler(\"{key}\")'>&nbsp;{translates[language][key]['name']}</button>"
+            with open(path, "r", encoding="utf-8") as file:
+                text = file.read()
 
-        for i, element in enumerate(menues[key].keys()):
-            name = f"{key}/{element}"
+            for key, value in variables.items():
+                while text.find(f"${key}$") != -1:
+                    text = text.replace(f"${key}$", value)
 
-            out += f"<button class='content__menu__button' onclick='clickHandler(\"{key}/{element}\")'>&nbsp;{translates[language][name]['name']}</button>"
+            with open(f"bundles/{language}.hjson", "r", encoding="utf-8") as file:
+                bundle = hjson.load(file)
 
-    out += "</div>"
+            for key, value in bundle.items():
+                while text.find(f"&{key}&") != -1:
+                    text = text.replace(f"&{key}&", value)
 
-    language_settings = f"""
-    <div class='content__menu__separator'></div>
-    <div class='content__menu__settings'>
-        <p class='settings__title'>{'Language Settings' if language == 'en' else 'Настройки языка'}</p>
-        <button class='language__button' onclick='changeLanguage("en")'>English</button>
-        <button class='language__button' onclick='changeLanguage("ru")'>Русский</button>
-    </div>
-    """
-
-    content = f"""
-    <header class="header">
-        <p class="header__name">Game Engine 3</p>
-        <p class="header__discription">{translates[language]["__desctiption__"]["text"]}</p>
-    </header>
-
-    <content class="content">
-        <div class="content__menu">{out}{language_settings}</div>
-        <div class="content__main">{decodeText(translates[language][menu]["text"])}</div>
-    </content>
-
-    <footer class="footer">
-        <p class="footer__text">Game Engine 3 ©2024-2025</p>
-    </footer>
-    """
-
-    return content
+            with open(f"templates/{pathfile}", "w", encoding="utf-8") as file:
+                file.write(text)
 
 
 def start():
-    content = createContent()
-
-    html = open("template.html", "r", encoding="utf-8").read()
-    html = html.replace("&{MAIN}&", f"<div class='main'>{content}</div>")
-
-    with open("templates/index.html", "w", encoding="utf-8") as file:
-        file.write(html)
+    initialization()
 
     app.run(debug=True)
 
@@ -138,50 +135,81 @@ def start():
 
 @app.route("/")
 def index():
-    return render_template("index.html", content=content)
+    global now
+
+    now = "index.html"
+
+    return render_template(now)
+
+
+@app.route("/download/")
+def download():
+    global now
+
+    now = "download.html"
+
+    return render_template(now)
+
+
+@app.route("/community/")
+def community():
+    global now
+
+    now = "community.html"
+
+    return render_template(now)
+
+
+@app.route("/updates/")
+def updates():
+    global now
+
+    now = "updates.html"
+
+    return render_template(now)
+
+
+@app.route("/documentation/")
+def documentation():
+    global now
+
+    now = "documentation.html"
+
+    return render_template(now)
+
+
+@app.route("/documentation/nodes")
+def nodes():
+    global now
+
+    now = "nodes.html"
+
+    return render_template(now)
+
+
+@app.route("/documentation/first-program")
+def first_program():
+    global now
+
+    now = "first-program.html"
+
+    return render_template(now)
+
+
+@app.route("/setLanguage", methods=["POST"])
+def setLanguage():
+    global language
+
+    language = request.form.get("id")
+
+    init()
+
+    return jsonify({"text": render_template(now)})
 
 
 @app.route("/scr/<path:filename>")
 def image(filename):
     return send_from_directory("scr", filename)
-
-
-@app.route("/click", methods=["POST"])
-def click():
-    global content, menu, language
-
-    id = request.form.get("id")
-
-    if not translates[language][id].get("visible", True) or id not in list(menues.keys()):
-        return None
-
-    menu = id
-
-    content = createContent()
-
-    response = {
-        "status": "success",
-        "button_id": id,
-        "body": render_template_string(content)
-    }
-
-    return jsonify(response)
-
-
-@app.route("/setLanguage", methods=["POST"])
-def setLanguage():
-    global content, menu, language
-
-    language = request.form.get("id")
-
-    content = createContent()
-
-    response = {
-        "status": "success",
-        "body": render_template_string(content)
-    }
-
-    return jsonify(response)
 
 
 if __name__ == "__main__":

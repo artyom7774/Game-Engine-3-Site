@@ -138,8 +138,8 @@ def start():
 
 @app.before_request
 def flask():
-    if request.remote_addr not in templates:
-        initialization(request.remote_addr)
+    if hashlib.sha256(request.remote_addr.encode()).hexdigest() not in templates:
+        initialization(hashlib.sha256(request.remote_addr.encode()).hexdigest())
 
 
 @app.route("/")
@@ -148,7 +148,7 @@ def index():
 
     now = "index.html"
 
-    return render_template_string(templates[request.remote_addr][now])
+    return render_template_string(templates[hashlib.sha256(request.remote_addr.encode()).hexdigest()][now])
 
 
 @app.route("/download/")
@@ -157,7 +157,7 @@ def download():
 
     now = "download.html"
 
-    return render_template_string(templates[request.remote_addr][now])
+    return render_template_string(templates[hashlib.sha256(request.remote_addr.encode()).hexdigest()][now])
 
 
 @app.route("/community/")
@@ -166,7 +166,7 @@ def community():
 
     now = "community.html"
 
-    return render_template_string(templates[request.remote_addr][now])
+    return render_template_string(templates[hashlib.sha256(request.remote_addr.encode()).hexdigest()][now])
 
 
 @app.route("/updates/")
@@ -175,7 +175,7 @@ def updates():
 
     now = "updates.html"
 
-    return render_template_string(templates[request.remote_addr][now])
+    return render_template_string(templates[hashlib.sha256(request.remote_addr.encode()).hexdigest()][now])
 
 
 @app.route("/documentation/")
@@ -184,7 +184,7 @@ def documentation():
 
     now = "documentation.html"
 
-    return render_template_string(templates[request.remote_addr][now])
+    return render_template_string(templates[hashlib.sha256(request.remote_addr.encode()).hexdigest()][now])
 
 
 @app.route("/documentation/nodes")
@@ -193,7 +193,7 @@ def nodes():
 
     now = "nodes.html"
 
-    return render_template_string(templates[request.remote_addr][now])
+    return render_template_string(templates[hashlib.sha256(request.remote_addr.encode()).hexdigest()][now])
 
 
 @app.route("/documentation/first-program")
@@ -202,7 +202,7 @@ def first_program():
 
     now = "first-program.html"
 
-    return render_template_string(templates[request.remote_addr][now])
+    return render_template_string(templates[hashlib.sha256(request.remote_addr.encode()).hexdigest()][now])
 
 
 @app.route("/documentation/variables")
@@ -211,14 +211,14 @@ def _variables():
 
     now = "variables.html"
 
-    return render_template_string(templates[request.remote_addr][now])
+    return render_template_string(templates[hashlib.sha256(request.remote_addr.encode()).hexdigest()][now])
 
 
 @app.route("/setLanguage", methods=["POST"])
 def setLanguage():
-    init(request.remote_addr, request.form.get("id"))
+    init(hashlib.sha256(request.remote_addr.encode()).hexdigest(), request.form.get("id"))
 
-    return jsonify({"text": render_template_string(templates[request.remote_addr][now])})
+    return jsonify({"text": render_template_string(templates[hashlib.sha256(request.remote_addr.encode()).hexdigest()][now])})
 
 
 @app.route("/scr/<path:filename>")

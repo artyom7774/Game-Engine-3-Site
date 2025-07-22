@@ -1,18 +1,19 @@
 from flask import Flask, render_template, request, jsonify, render_template_string, send_from_directory
 
 import requests
+import hashlib
 import hjson
 import os
 
 app = Flask(__name__)
 
+templates = {}
 variables = {}
-language = "en"
 
 now = "index.html"
 
 
-def initialization():
+def initialization(ip):
     # DOWNLOAD VARIABLES
 
     url = "https://raw.githubusercontent.com/artyom7774/Game-Engine-3/main/scr/files/version.json"
@@ -96,15 +97,20 @@ def initialization():
 
     print(variables)
 
-    init()
+    init(ip, "en")
 
 
-def init():
+def init(ip, language):
     # CREATE TEMPLATES FILES & TRANSLATING
+
+    templates[ip] = {}
 
     for root, dirs, files in os.walk("base"):
         for pathfile in files:
             path = f"{root}/{pathfile}"
+
+            if pathfile.endswith(".py"):
+                continue
 
             with open(path, "r", encoding="utf-8") as file:
                 text = file.read()
@@ -120,17 +126,20 @@ def init():
                 while text.find(f"&{key}&") != -1:
                     text = text.replace(f"&{key}&", value)
 
-            with open(f"templates/{pathfile}", "w", encoding="utf-8") as file:
-                file.write(text)
+            templates[ip][pathfile] = text
 
 
 def start():
-    initialization()
-
     app.run(debug=True)
 
     app.config["UPLOAD_FOLDER"] = "scr"
     app.config["MAX_CONTENT_LENGTH"] = 64 * 1024 ** 2
+
+
+@app.before_request
+def flask():
+    if request.remote_addr not in templates:
+        initialization(request.remote_addr)
 
 
 @app.route("/")
@@ -139,7 +148,7 @@ def index():
 
     now = "index.html"
 
-    return render_template(now)
+    return render_template_string(templates[request.remote_addr][now])
 
 
 @app.route("/download/")
@@ -148,7 +157,7 @@ def download():
 
     now = "download.html"
 
-    return render_template(now)
+    return render_template_string(templates[request.remote_addr][now])
 
 
 @app.route("/community/")
@@ -157,7 +166,7 @@ def community():
 
     now = "community.html"
 
-    return render_template(now)
+    return render_template_string(templates[request.remote_addr][now])
 
 
 @app.route("/updates/")
@@ -166,7 +175,7 @@ def updates():
 
     now = "updates.html"
 
-    return render_template(now)
+    return render_template_string(templates[request.remote_addr][now])
 
 
 @app.route("/documentation/")
@@ -175,7 +184,7 @@ def documentation():
 
     now = "documentation.html"
 
-    return render_template(now)
+    return render_template_string(templates[request.remote_addr][now])
 
 
 @app.route("/documentation/nodes")
@@ -184,7 +193,7 @@ def nodes():
 
     now = "nodes.html"
 
-    return render_template(now)
+    return render_template_string(templates[request.remote_addr][now])
 
 
 @app.route("/documentation/first-program")
@@ -193,18 +202,23 @@ def first_program():
 
     now = "first-program.html"
 
-    return render_template(now)
+    return render_template_string(templates[request.remote_addr][now])
+
+
+@app.route("/documentation/variables")
+def _variables():
+    global now
+
+    now = "variables.html"
+
+    return render_template_string(templates[request.remote_addr][now])
 
 
 @app.route("/setLanguage", methods=["POST"])
 def setLanguage():
-    global language
+    init(request.remote_addr, request.form.get("id"))
 
-    language = request.form.get("id")
-
-    init()
-
-    return jsonify({"text": render_template(now)})
+    return jsonify({"text": render_template_string(templates[request.remote_addr][now])})
 
 
 @app.route("/scr/<path:filename>")

@@ -609,9 +609,9 @@ footer {
     max-width: calc(100% - 20px);
 }
 
-/*FIRST PROGRAM*/
+/*GUIDE*/
 
-.main__first-program {
+.main__guide {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -619,7 +619,7 @@ footer {
     margin: 0px 20px 0px 20px;
 }
 
-.main__first-program__element {
+.main__guide__element {
     width: 100%;
     height: auto;
     background: rgba(255, 255, 255, 0.9);
@@ -629,18 +629,29 @@ footer {
     transition: transform 200ms ease-in-out;
 }
 
-.main__first-program__element__title {
+.main__guide__element__title {
     margin: 5px 0px 5px 30px;
     font-size: 22px;
     color: #25282b;
 }
 
-.main__first-program__element__text p {
-    margin: 5px 0px 5px 5px;
+.main__guide__element__text p {
+    margin: 3px 0px 3px 3px;
 }
 
-.main__first-program__element__text img {
+.main__guide__element__text img {
     margin: 0px 0px 0px 10px;
     border-radius: 8px;
     max-width: calc(100% - 20px);
+}
+
+.main__guide__element__text a {
+    margin: 0px 0px 0px 0px;
+    color: blue;
+    word-break: break-all;
+}
+
+.main__guide__element__text ul {
+    padding: 0px 0px 0px 30px;
+    margin: 0px 0px 0px 0px;
 }

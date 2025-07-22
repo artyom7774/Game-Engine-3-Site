@@ -4,7 +4,7 @@
     "Documentation": "Documentation"
     "Updates": "Updates"
     "Your free, open-source <br> game engine.": "Your free, open-source <br> game engine."
-    "Divelop your 2D programs and games without writing code!": "Divelop your 2D programs and games without writing code!"
+    "Divelop your 2D programs and games without writing code!": "Develop your 2D programs and games without writing code!"
     "Latest news": "Latest news"
     "A different way to make programs": "A different way to make programs"
     "Language": "Language"
@@ -259,5 +259,64 @@
     "lacunarity": "lacunarity",
     "persistence": "persistence"
 
-    "Documentation on the creation of the first program Hello World!": "Documentation on the creation of the first program Hello World!"
+    "Documentation on the creation of the first program Hello World!": "Documentation on the creation of the first program Hello World!",
+    "Creating project": "Creating project",
+    "Click on the File menu and select Create": "Click on the File menu and select Create",
+    "In the window that appears, write the name of the project and click the create button": "In the window that appears, write the name of the project and click the create button",
+    "Creating first object": "Creating first object",
+    "In the opened project, right-click on the objects folder, click create and object": "In the opened project, right-click on the objects folder, click create and object",
+    "We write the name of the object (in the documentation it will be player)": "We write the name of the object (in the documentation it will be player)",
+    "After that we had an object in the left menu": "After that we had an object in the left menu",
+    "Adding image": "Adding image",
+    "Copy any picture from your computer and paste it into the assets folder": "Copy any picture from your computer and paste it into the assets folder",
+    "Object settings": "Object settings",
+    "Double click on the object and a menu with the object parameters opens in the center": "Double click on the object and a menu with the object parameters opens in the center",
+    "Creating scene": "Creating scene",
+    "Right-click on the scenes folder, click the create button and select the scene": "Right-click on the scenes folder, click the create button and select the scene",
+    "In the window that opens, write the name of the scene": "In the window that opens, write the name of the scene",
+    "In the scene, right-click on the center, click create object and click create": "In the scene, right-click on the center, click create object and click create",
+    "In the menu on the left in the scene tab we have our object": "In the menu on the left in the scene tab we have our object",
+    "In the menu on the left in the focus object tab we must enter the name of the object that we found on the left": "In the menu on the left in the focus object tab we must enter the name of the object that we found on the left",
+    "After this the camera will be centered on this object": "After this the camera will be centered on this object",
+    "Project config": "Project config",
+    "Open file project.cfg": "Open file project.cfg",
+    "Here we can configure the main parameters of our project": "Here we can configure the main parameters of our project",
+    "Opposite the start scene, click on the button and select our scene": "Opposite the start scene, click on the button and select our scene",
+    "Now the basis of our project is ready": "Now the basis of our project is ready",
+    "Create function": "Create function",
+    "Right-click on the functions folder, click the create button and select the function": "Right-click on the functions folder, click the create button and select the function",
+    "Open the function": "Open the function",
+    "In the function we can write various programs and algorithms for our program": "In the function we can write various programs and algorithms for our program",
+    "Right-click on the grid and select create": "Right-click on the grid and select create",
+    "In this menu, open the basic nodes and select the node on start game, click create": "In this menu, open the basic nodes and select the node on start game, click create",
+    "According to this principle, we select the node to write text and create it": "According to this principle, we select the node to write text and create it",
+    "In the input field in the text writing node we write Hello World!": "In the input field in the text writing node we write Hello World!",
+    "The node on start game is the beginning of our program, after the program starts we should display the text": "The node on start game is the beginning of our program, after the program starts we should display the text",
+    "We connect the game start node with the text output starting from the first one, with this we show the program that we need to output the text after the game starts": "We connect the game start node with the text output starting from the first one, with this we show the program that we need to output the text after the game starts",
+    "Now when we launch the game, Hello World! will be displayed in the console": "Now when we launch the game, Hello World! will be displayed in the console",
+    "Run project": "Run project",
+    "To run a project, click on Project in the menu at the top and select Run": "To run a project, click on Project in the menu at the top and select Run",
+    "If everything was done correctly, you will be able to see Hello World! in the console and the character will be shown on the scene": "If everything was done correctly, you will be able to see Hello World! in the console and the character will be shown on the scene"
+
+    "Variables": "Variables"
+    "Documentation on working with variables": "Documentation on working with variables"
+    "The start": "The start",
+    "We will use the project made in the previous documentation": "We will use the project made in the previous documentation",
+    "First program": "First program",
+    "All variables are divided into 3 groups": "All variables are divided into 3 groups",
+    "Global variables": "Global variables",
+    "Local variables": "Local variables",
+    "Object variables": "Object variables",
+    "Creating variables": "Creating variables",
+    "Global variables can be created in functions and in config.cfg": "Global variables can be created in functions and in config.cfg",
+    "Locals variables can be created in functions and exists only in this function": "Locals variables can be created in functions and exists only in this function",
+    "Object variables can be created in objects (.obj and .cobj in scene), variables unique for every object": "Object variables can be created in objects (.obj and .cobj in scene), variables unique for every object",
+    "Using global and local variables": "Using global and local variables",
+    "Using the get variable and set variable nodes, you can manage local and global variables": "Using the get variable and set variable nodes, you can manage local and global variables",
+    "In this example, we get the local variable var1 and output its contents to the console, we also get the variable var2, add 5 to it and save it": "In this example, we get the local variable var1 and output its contents to the console, we also get the variable var2, add 5 to it and save it",
+    "Using object variables": "Using object variables",
+    "To use object variables we need nodes get object variable and set object variable, they differ from the previous ones in that they have one more parameter - object ID": "To use object variables we need nodes get object variable and set object variable, they differ from the previous ones in that they have one more parameter - object ID",
+    "To get the object ID, we need the get object ID by name node, which accepts the object name when adding it to the scene": "To get the object ID, we need the get object ID by name node, which accepts the object name when adding it to the scene",
+    "To create an object variable, select the object on the stage and set the variables in the window on the right": "To create an object variable, select the object on the stage and set the variables in the window on the right",
+    "They will also be copied from the object that was used to add to the scene, if you have previously added them to this object": "They will also be copied from the object that was used to add to the scene, if you have previously added them to this object"
 }

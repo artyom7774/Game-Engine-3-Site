@@ -13,9 +13,9 @@
     "Open source": "Открытый исходный код"
     "Game Engine 3 is free and available to every user. The source code can be found in the repository on GitHub.": "Game Engine 3 бесплатен и доступен каждому пользователю. Исходный код можно найти в репозитории на GitHub."
     "Interface": "Интерфейс"
-    "Game Engine 3's interface is intuitive and allows you to quickly get used to the program": "Интерфейс Game Engine 3 интуитивен и позволяет быстро освоиться с программой"
-    "On our Discord server you can share your projects, communicate with other users and help with the development of the program": "На нашем Discord-сервере вы можете делиться проектами, общаться с другими пользователями и помогать в разработке программы"
-    "On our server you can share your projects, communicate with other users and help with the development of the program": "На нашем сервере вы можете делиться проектами, общаться с другими пользователями и помогать в разработке программы"
+    "Game Engine 3's interface is intuitive and allows you to quickly get used to the program": "Интерфейс Game Engine 3 интуитивен и позволяет быстро освоиться с программой."
+    "On our Discord server you can share your projects, communicate with other users and help with the development of the program": "На нашем Discord-сервере вы можете делиться проектами, общаться с другими пользователями и помогать в разработке Game Engine 3."
+    "On our server you can share your projects, communicate with other users and help with the development of the program": "На нашем сервере вы можете делиться проектами, общаться с другими пользователями и помогать в разработке Game Engine 3."
     "Game Engine 3 is an open-source project. We welcome community contributions": "Game Engine 3 - проект с открытым исходным кодом. Мы приветствуем вклад сообщества"
     "Bug reports": "Сообщения об ошибках"
     "Feature suggestions": "Предложения по улучшению"
@@ -288,11 +288,11 @@
     "Open the function": "Откройте функцию",
     "In the function we can write various programs and algorithms for our program": "В функции мы можем писать различные программы и алгоритмы для нашей программы",
     "Right-click on the grid and select create": "Щелкните правой кнопкой мыши по сетке и выберите создать",
-    "In this menu, open the basic nodes and select the node on start game, click create": "В этом меню откройте базовые узлы и выберите узел при запуске игры, нажмите создать",
-    "According to this principle, we select the node to write text and create it": "По этому принципу выбираем узел для написания текста и создаем его",
-    "In the input field in the text writing node we write Hello World!": "В поле ввода в узле написания текста мы пишем Hello World!",
-    "The node on start game is the beginning of our program, after the program starts we should display the text": "Узел при запуске игры - это начало нашей программы, после запуска программы мы должны отобразить текст",
-    "We connect the game start node with the text output starting from the first one, with this we show the program that we need to output the text after the game starts": "Мы соединяем узел запуска игры с выводом текста, начиная с первого, этим мы показываем программе, что нам нужно вывести текст после запуска игры",
+    "In this menu, open the basic nodes and select the node on start game, click create": "В этом меню откройте базовые ноды и выберите нод при запуске игры, нажмите создать",
+    "According to this principle, we select the node to write text and create it": "По этому принципу выбираем нод для написания текста и создаем его",
+    "In the input field in the text writing node we write Hello World!": "В поле ввода в ноде написания текста мы пишем Hello World!",
+    "The node on start game is the beginning of our program, after the program starts we should display the text": "Нод при запуске игры - это начало нашей программы, после запуска программы мы должны отобразить текст",
+    "We connect the game start node with the text output starting from the first one, with this we show the program that we need to output the text after the game starts": "Мы соединяем нод запуска игры с выводом текста, начиная с первого, этим мы показываем программе, что нам нужно вывести текст после запуска игры",
     "Now when we launch the game, Hello World! will be displayed in the console": "Теперь при запуске игры Hello World! будет отображаться в консоли",
     "Run project": "Запуск проекта",
     "To run a project, click on Project in the menu at the top and select Run": "Чтобы запустить проект, нажмите на Проект в меню вверху и выберите Запустить",
@@ -312,11 +312,64 @@
     "Locals variables can be created in functions and exists only in this function": "Локальные переменные могут быть созданы в функциях и существуют только в этой функции",
     "Object variables can be created in objects (.obj and .cobj in scene), variables unique for every object": "Переменные объектов могут быть созданы в объектах (.obj и .cobj в сцене), переменные уникальны для каждого объекта",
     "Using global and local variables": "Использование глобальных и локальных переменных",
-    "Using the get variable and set variable nodes, you can manage local and global variables": "Используя узлы получения переменной и установки переменной, вы можете управлять локальными и глобальными переменными",
+    "Using the get variable and set variable nodes, you can manage local and global variables": "Используя ноды получения переменной и установки переменной, вы можете управлять локальными и глобальными переменными",
     "In this example, we get the local variable var1 and output its contents to the console, we also get the variable var2, add 5 to it and save it": "В этом примере мы получаем локальную переменную var1 и выводим её содержимое в консоль, также получаем переменную var2, добавляем к ней 5 и сохраняем её",
     "Using object variables": "Использование переменных объектов",
-    "To use object variables we need nodes get object variable and set object variable, they differ from the previous ones in that they have one more parameter - object ID": "Для использования переменных объектов нам нужны узлы получения переменной объекта и установки переменной объекта, они отличаются от предыдущих тем, что имеют ещё один параметр - ID объекта",
-    "To get the object ID, we need the get object ID by name node, which accepts the object name when adding it to the scene": "Чтобы получить ID объекта, нам нужен узел получения ID объекта по имени, который принимает имя объекта при добавлении его в сцену",
+    "To use object variables we need nodes get object variable and set object variable, they differ from the previous ones in that they have one more parameter - object ID": "Для использования переменных объектов нам нужны ноды получения переменной объекта и установки переменной объекта, они отличаются от предыдущих тем, что имеют ещё один параметр - ID объекта",
+    "To get the object ID, we need the get object ID by name node, which accepts the object name when adding it to the scene": "Чтобы получить ID объекта, нам нужен нод получения ID объекта по имени, который принимает имя объекта при добавлении его в сцену",
     "To create an object variable, select the object on the stage and set the variables in the window on the right": "Чтобы создать переменную объекта, выберите объект на сцене и установите переменные в окне справа",
     "They will also be copied from the object that was used to add to the scene, if you have previously added them to this object": "Они также будут скопированы из объекта, который использовался для добавления в сцену, если вы ранее добавляли их к этому объекту"
+
+    "Documentation on working with Python node and programming": "Документация по работе с Python нодом и программированием",
+    "Start": "Начало",
+    "We will use the project made in the previous documentation": "Мы будем использовать проект, созданный в предыдущей документации",
+    "First program": "Первая программа",
+    "Python node allows you to write code in this language and execute the written functions in the program": "Python нод позволяет писать код на этом языке и выполнять написанные функции в программе",
+    "Create nodes": "Создание нодов",
+    "Create a node On game start and Python": "Создать нод При старте игры и Python",
+    "Python node takes 3 parameters: code to execute, arguments as a list, arguments as a dictionary, and returns the list that the function returns": "Python нод принимает 3 параметра: код для выполнения, аргументы в виде списка, аргументы в виде словаря, и возвращает список, который возвращает функция",
+    "Programming": "Программирование",
+    "When you click on the button in the node, a window opens in which you can write code in Python": "При нажатии на кнопку в ноле открывается окно, в котором можно писать код на Python",
+    "Only the code that is in the run function will be executed": "Будет выполняться только код, который находится в функции run",
+    "Functions": "Функции",
+    "Below is a list of all functions that copy the functionality of nodes": "Ниже приведен список всех функций, которые копируют функционал нодов",
+    "return decoded value": "вернуть декодированное значение",
+    "close project": "закрыть проект",
+    "return variable by name and globality": "вернуть переменную по имени и глобальности",
+    "set value to variable by name and globality": "установить значение переменной по имени и глобальности",
+    "return all objects in group": "вернуть все объекты в группе",
+    "return random number in [a, b]": "вернуть случайное число в диапазоне [a, b]",
+    "write text on console": "записать текст в консоль",
+    "display text on scene in x, y": "отобразить текст на сцене в координатах x, y",
+    "return [True, object ID] if collision else [False, -1]. Append - count contact as a collision": "вернуть [True, ID объекта] при столкновении, иначе [False, -1]. Append - считать касание столкновением",
+    "create object by name in dir objects and place this on x, y": "создать объект по имени из папки objects и разместить его в координатах x, y",
+    "return ID of object by name. Name have object which were created on stage before running": "вернуть ID объекта по имени. Имя есть у объектов, которые были созданы на сцене до запуска",
+    "return object x, y by ID": "вернуть координаты объекта x, y по ID",
+    "set position for object by ID": "установить позицию для объекта по ID",
+    "return variable by object ID and name": "вернуть переменную по ID объекта и имени",
+    "set value to variable by id and name": "установить значение переменной по ID и имени",
+    "jump for object by ID": "прыжок для объекта по ID",
+    "create moving vector by angle and power for object ID": "создать вектор движения по углу и силе для объекта по ID",
+    "create moving vector bu angle, power and braking speed foor object ID": "создать вектор движения по углу, силе и скорости торможения для объекта по ID",
+    "remove object by ID": "удалить объект по ID",
+    "returns [x, y] - the resulting all vectors for object by ID": "возвращает [x, y] - результирующие все векторы для объекта по ID",
+    "starts the animation for the object by ID": "запускает анимацию для объекта по ID",
+    "sets the animation to the base if it exists, otherwise sets the object's sprite for the object by ID": "устанавливает анимацию в базовое состояние, если она существует, иначе устанавливает спрайт объекта по ID",
+    "mirrors animations of the object by ID horizontally and vertically, sets True for reflection on this axis": "отражает анимации объекта по ID по горизонтали и вертикали, устанавливает True для отражения по этой оси",
+    "return mouse x, y": "вернуть координаты мыши x, y",
+    "set object parameter for object by ID": "установить параметр объекта для объекта по ID",
+    "return object parameter for object by ID": "вернуть параметр объекта для объекта по ID",
+    "return frame time passed": "вернуть время, прошедшее с предыдущего кадра",
+    "return Perlin noise value on X, Y": "вернуть значение шума Перлина в точке X, Y",
+    "return sin X": "вернуть sin X",
+    "return cos X": "вернуть cos X",
+    "return tan X": "вернуть tan X",
+    "return ctg X": "вернуть ctg X",
+    "return degrees from radians": "вернуть градусы из радианов",
+    "return radians from degrees": "вернуть радианы из градусов",
+    "go to scene by name": "перейти к сцене по имени",
+    "return scene name": "вернуть имя сцены",
+    "play music by path": "воспроизвести музыку по пути",
+    "stop music": "остановить музыку",
+    "play sound by path": "воспроизвести звук по пути"
 }

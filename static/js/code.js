@@ -1,12 +1,12 @@
 function changeLanguage(language) {
     console.log("change language:", language);
 
-    fetch('/setLanguage', {
-        method: 'POST',
+    fetch("/setLanguage", {
+        method: "POST",
         headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
+            "Content-Type": "application/x-www-form-urlencoded",
         },
-        body: 'id=' + language
+        body: "id=" + language
     })
     .then(response => response.json())
     .then(data => {
@@ -15,6 +15,14 @@ function changeLanguage(language) {
         document.close();
     })
     .catch(error => {
-        console.error('Error:', error);
+        console.error("Error:", error);
     });
+}
+
+function updateOnline(online) {
+    const widget = document.getElementById("footer__another__text__online");
+
+    if (widget) {
+        widget.textContent = "Online: " + online;
+    }
 }

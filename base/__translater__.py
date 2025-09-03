@@ -2,11 +2,9 @@ import re
 
 import json
 
-text = open("variables.html", encoding="utf-8").read()
+text = open("programming.html", encoding="utf-8").read()
 
 matches = re.findall(r'&(.*?)&', text, re.DOTALL)
-
-print("Найденные подстроки:")
 
 a = {}
 for idx, match in enumerate(matches, 1):

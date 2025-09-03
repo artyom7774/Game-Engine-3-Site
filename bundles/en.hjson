@@ -13,9 +13,9 @@
     "Open source": "Open source"
     "Game Engine 3 is free and available to every user. The source code can be found in the repository on GitHub.": "Game Engine 3 is free and available to every user. The source code can be found in the repository on GitHub."
     "Interface": "Interface"
-    "Game Engine 3's interface is intuitive and allows you to quickly get used to the program": "Game Engine 3's interface is intuitive and allows you to quickly get used to the program"
-    "On our Discord server you can share your projects, communicate with other users and help with the development of the program": "On our Discord server you can share your projects, communicate with other users and help with the development of the program"
-    "On our server you can share your projects, communicate with other users and help with the development of the program": "On our server you can share your projects, communicate with other users and help with the development of the program"
+    "Game Engine 3's interface is intuitive and allows you to quickly get used to the program": "Game Engine 3's interface is intuitive and allows you to quickly get used to the program."
+    "On our Discord server you can share your projects, communicate with other users and help with the development of the program": "On our Discord server you can share your projects, communicate with other users and help with the development of the program."
+    "On our server you can share your projects, communicate with other users and help with the development of the program": "On our server you can share your projects, communicate with other users and help with the development of the program."
     "Game Engine 3 is an open-source project. We welcome community contributions": "Game Engine 3 is an open-source project. We welcome community contributions"
     "Bug reports": "Bug reports"
     "Feature suggestions": "Feature suggestions"
@@ -319,4 +319,57 @@
     "To get the object ID, we need the get object ID by name node, which accepts the object name when adding it to the scene": "To get the object ID, we need the get object ID by name node, which accepts the object name when adding it to the scene",
     "To create an object variable, select the object on the stage and set the variables in the window on the right": "To create an object variable, select the object on the stage and set the variables in the window on the right",
     "They will also be copied from the object that was used to add to the scene, if you have previously added them to this object": "They will also be copied from the object that was used to add to the scene, if you have previously added them to this object"
+
+    "Documentation on working with Python node and programming": "Documentation on working with Python node and programming",
+    "Start": "Start",
+    "We will use the project made in the previous documentation": "We will use the project made in the previous documentation",
+    "First program": "First program",
+    "Python node allows you to write code in this language and execute the written functions in the program": "Python node allows you to write code in this language and execute the written functions in the program",
+    "Create nodes": "Create nodes",
+    "Create a node On game start and Python": "Create a node On game start and Python",
+    "Python node takes 3 parameters: code to execute, arguments as a list, arguments as a dictionary, and returns the list that the function returns": "Python node takes 3 parameters: code to execute, arguments as a list, arguments as a dictionary, and returns the list that the function returns",
+    "Programming": "Programming",
+    "When you click on the button in the node, a window opens in which you can write code in Python": "When you click on the button in the node, a window opens in which you can write code in Python",
+    "Only the code that is in the run function will be executed": "Only the code that is in the run function will be executed",
+    "Functions": "Functions",
+    "Below is a list of all functions that copy the functionality of nodes": "Below is a list of all functions that copy the functionality of nodes",
+    "return decoded value": "return decoded value",
+    "close project": "close project",
+    "return variable by name and globality": "return variable by name and globality",
+    "set value to variable by name and globality": "set value to variable by name and globality",
+    "return all objects in group": "return all objects in group",
+    "return random number in [a, b]": "return random number in [a, b]",
+    "write text on console": "write text on console",
+    "display text on scene in x, y": "display text on scene in x, y",
+    "return [True, object ID] if collision else [False, -1]. Append - count contact as a collision": "return [True, object ID] if collision else [False, -1]. Append - count contact as a collision",
+    "create object by name in dir objects and place this on x, y": "create object by name in dir objects and place this on x, y",
+    "return ID of object by name. Name have object which were created on stage before running": "return ID of object by name. Name have object which were created on stage before running",
+    "return object x, y by ID": "return object x, y by ID",
+    "set position for object by ID": "set position for object by ID",
+    "return variable by object ID and name": "return variable by object ID and name",
+    "set value to variable by id and name": "set value to variable by id and name",
+    "jump for object by ID": "jump for object by ID",
+    "create moving vector by angle and power for object ID": "create moving vector by angle and power for object ID",
+    "create moving vector bu angle, power and braking speed foor object ID": "create moving vector bu angle, power and braking speed foor object ID",
+    "remove object by ID": "remove object by ID",
+    "returns [x, y] - the resulting all vectors for object by ID": "returns [x, y] - the resulting all vectors for object by ID",
+    "starts the animation for the object by ID": "starts the animation for the object by ID",
+    "sets the animation to the base if it exists, otherwise sets the object's sprite for the object by ID": "sets the animation to the base if it exists, otherwise sets the object's sprite for the object by ID",
+    "mirrors animations of the object by ID horizontally and vertically, sets True for reflection on this axis": "mirrors animations of the object by ID horizontally and vertically, sets True for reflection on this axis",
+    "return mouse x, y": "return mouse x, y",
+    "set object parameter for object by ID": "set object parameter for object by ID",
+    "return object parameter for object by ID": "return object parameter for object by ID",
+    "return frame time passed": "return frame time passed",
+    "return Perlin noise value on X, Y": "return Perlin noise value on X, Y",
+    "return sin X": "return sin X",
+    "return cos X": "return cos X",
+    "return tan X": "return tan X",
+    "return ctg X": "return ctg X",
+    "return degrees from radians": "return degrees from radians",
+    "return radians from degrees": "return radians from degrees",
+    "go to scene by name": "go to scene by name",
+    "return scene name": "return scene name",
+    "play music by path": "play music by path",
+    "stop music": "stop music",
+    "play sound by path": "play sound by path"
 }
